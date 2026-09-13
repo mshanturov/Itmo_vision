@@ -1,0 +1,17 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+tqdm
+jupyter
+notebook
+ipywidgets
+torch
+torchvision
+torchaudio
+torchmetrics
+albumentations
+opencv-python
+Pillow
+nbformat
