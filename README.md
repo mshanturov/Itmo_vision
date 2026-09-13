@@ -21,16 +21,28 @@
 ## Подготовка данных
 
 Источник: https://deepvisualmarketing.github.io/  
-Скачать архив **Quality checked front-view images (730 MB)** и распаковать в:
+Рекомендуемый архив: **Quality checked front-view images (730 MB)** (`Confirmed_fronts.zip`).
+
+Распакуйте архив в:
 
 ```text
 data/raw/dvm_front/
 ```
 
-Ожидаемая структура:
+Поддерживаются оба варианта структуры DVM:
 
 ```text
+# Вариант 1 (из manual)
 data/raw/dvm_front/Brand/Model/Year/Color/*.jpg
+
+# Вариант 2 (Confirmed_fronts)
+data/raw/dvm_front/Brand/Year/Brand$$Model$$Year$$Color$$...jpg
+```
+
+Если храните данные в другом месте, можно указать путь через переменную окружения:
+
+```bash
+export DVM_DATA_ROOT="/absolute/path/to/dvm_front"
 ```
 
 ## Быстрый запуск
@@ -43,3 +55,8 @@ jupyter notebook
 ```
 
 После запуска откройте `notebooks/lab1_dvm_car_color_classification.ipynb`.
+
+## Примечания по запуску
+
+- В ноутбуке устройство выбирается автоматически (`cuda`, если доступна, иначе `cpu`).
+- Для ускорения на CPU можно уменьшить `image_size` и `epochs` в `Config`.
