@@ -56,10 +56,22 @@ jupyter notebook
 
 После запуска откройте `notebooks/lab1_dvm_car_color_classification.ipynb`.
 
+### Быстрый запуск в Windows (PowerShell)
+
+```powershell
+py -3.11 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m jupyter notebook
+```
+
 ## Примечания по запуску
 
 - В ноутбуке есть отдельная ячейка **«Скачать и распаковать DVM front-view»**.
   - По умолчанию она безопасна и ничего не качает (`DOWNLOAD_DVM_FRONT = False`).
   - Чтобы скачать датасет прямо из ноутбука, поставьте `DOWNLOAD_DVM_FRONT = True` и выполните эту ячейку один раз.
+- В `requirements.txt` оставлены только реально используемые зависимости ноутбука, чтобы установка на Windows не падала на сборке лишних C-пакетов.
 - В ноутбуке устройство выбирается автоматически (`cuda`, если доступна, иначе `cpu`).
 - Для ускорения на CPU можно уменьшить `image_size` и `epochs` в `Config`.

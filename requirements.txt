@@ -9,9 +9,4 @@ notebook
 ipywidgets
 torch
 torchvision
-torchaudio
-torchmetrics
-albumentations
-opencv-python
 Pillow
-nbformat
